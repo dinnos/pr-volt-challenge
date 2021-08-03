@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pr-volt/parking/application": ["libs/parking/application/src/index.ts"],
+      "@pr-volt/parking/domain": ["libs/parking/domain/src/index.ts"],
+      "@pr-volt/vehicle/domain": ["libs/vehicle/domain/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

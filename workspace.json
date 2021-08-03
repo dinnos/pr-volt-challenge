@@ -1,6 +1,70 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "parking-application": {
+      "root": "libs/parking/application",
+      "sourceRoot": "libs/parking/application/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/parking/application/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/parking/application"],
+          "options": {
+            "jestConfig": "libs/parking/application/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "parking-domain": {
+      "root": "libs/parking/domain",
+      "sourceRoot": "libs/parking/domain/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/parking/domain/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/parking/domain"],
+          "options": {
+            "jestConfig": "libs/parking/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "vehicle-domain": {
+      "root": "libs/vehicle/domain",
+      "sourceRoot": "libs/vehicle/domain/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/vehicle/domain/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/vehicle/domain"],
+          "options": {
+            "jestConfig": "libs/vehicle/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }
