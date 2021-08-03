@@ -1,5 +1,5 @@
 import { Vehicle } from '@pr-volt/vehicle/domain';
-import { ParkingRepository } from '@pr-volt/parking/domain';
+import { ParkingIsFull, ParkingRepository } from '@pr-volt/parking/domain';
 import { ParkingFinder } from '../find/ParkingFinder';
 
 /**
@@ -16,7 +16,7 @@ export class AddVehicle {
     const parking = await this.finder.run(parkingId);
 
     if (!parking.hasAvailability()) {
-      // TODO Throw parking is full
+      throw new ParkingIsFull(parkingId);
     }
 
     const { size } = vehicle;

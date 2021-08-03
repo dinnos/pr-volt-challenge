@@ -1,4 +1,4 @@
-import { Parking, ParkingRepository } from '@pr-volt/parking/domain';
+import { Parking, ParkingNotFound, ParkingRepository } from '@pr-volt/parking/domain';
 
 export class ParkingFinder {
   constructor(private readonly repository: ParkingRepository) { }
@@ -7,7 +7,7 @@ export class ParkingFinder {
     const parking = await this.repository.find(id);
 
     if (parking === null) {
-      // TODO Throw parking not found
+      throw new ParkingNotFound(id);
     }
 
     return parking;
